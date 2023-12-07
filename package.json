@@ -29,11 +29,13 @@
   ],
   "scripts": {
     "ng": "ng",
+    "build": "npm run angular:build && npm run electron:build",
     "angular:start": "ng serve",
     "angular:build": "ng build",
     "angular:watch": "ng build --watch --configuration development",
     "angular:test": "ng test",
-    "electron:build": "./electron/tsc "
+    "electron:build": "cd electron && tsc",
+    "electron:start": "electron ."
   },
   "dependencies": {
     "@angular/animations": "^17.0.0",
@@ -54,7 +56,8 @@
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
     "electron": "^28.0.0",
-    "electron-reload": "^2.0.0-alpha.1",
+    "electron-debug": "^3.2.0",
+    "electron-reloader": "^1.2.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

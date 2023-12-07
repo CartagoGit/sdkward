@@ -5,11 +5,7 @@
     "outDir": "../dist",
     "types": []
   },
-  "files": [
-    "main.ts"
-  ],
-  "include": [
-    "**/*.d.ts",
-    "**/*.*"
-  ]
+  "files": ["main.ts"],
+  "include": ["**/*.*"],
+  "exclude": ["../**/*.*", "**/*.spec.ts", "**/*.test.ts"]
 }

@@ -5,11 +5,7 @@
     "outDir": "../dist/web",
     "types": []
   },
-  "files": [
-    "main.ts"
-  ],
-  "include": [
-    "**/*.d.ts",
-    "**/*.*"
-  ]
+  "files": ["main.ts"],
+  "include": ["app/**/*.*"],
+  "exclude": ["../**/*.*", "app/**/*.spec.ts", "app/**/*.test.ts"]
 }
