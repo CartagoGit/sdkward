@@ -3,7 +3,9 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../dist",
-    "types": []
+    "types": [],
+    "module": "commonjs",
+    "target": "ES2022",
   },
   "files": ["main.ts"],
   "include": ["**/*.*"],

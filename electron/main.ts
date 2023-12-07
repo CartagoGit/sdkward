@@ -30,16 +30,23 @@ const createWindow = () => {
     y: 0,
     width: screenSize.width,
     height: screenSize.height,
+    center: true,
     webPreferences: {
       nodeIntegration: true,
-      allowRunningInsecureContent: isProd ? false : true,
       devTools: isProd ? false : true,
     },
   });
+  win.maximize();
 
   if (!isProd) {
-    electronDebug({ isEnabled: true, devToolsMode: 'undocked' });
+    console.info('Electron:: main.ts -> Dev mode');
+    electronDebug({
+      isEnabled: true,
+      devToolsMode: 'undocked',
+      showDevTools: true,
+    });
     electronReloader(module);
+    win.webContents.openDevTools();
     win.loadURL(`http://localhost:${port}`);
   } else {
     // Path when running electron executable
@@ -47,12 +54,23 @@ const createWindow = () => {
 
     if (fs.existsSync(path.join(__dirname, '../dist/view/index.html'))) {
       // Path when running electron in local folder
+      console.info('Electron:: main.ts -> Local mode');
       pathIndex = '../dist/view/index.html';
-    }
+    } else console.info('Electron:: main.ts -> Prod mode');
 
     const url = new URL(path.join('file:', __dirname, pathIndex));
     win.loadURL(url.href);
   }
+
+  // Desactivar el menú predeterminado de Electron
+  win.removeMenu();
+
+  win.webContents.setWindowOpenHandler((data) => {
+    const { url } = data;
+    require('electron').shell.openExternal(url);
+    console.info('Electron: Url opened in browser:', url);
+    return { action: 'deny' };
+  });
 
   // Emitted when the window is closed.
   win.on('closed', () => {

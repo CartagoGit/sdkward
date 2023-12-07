@@ -14,19 +14,6 @@
   "homepage": "https://https://github.com/CartagoGit/sdkward",
   "license": "MIT",
   "private": true,
-  "main": "electron/main",
-  "keywords": [
-    "angular",
-    "angular 17",
-    "electron",
-    "electron 28",
-    "nodejs",
-    "typescript",
-    "sass",
-    "windows",
-    "mac",
-    "linux"
-  ],
   "scripts": {
     "ng": "ng",
     "build": "npm run angular:build && npm run electron:build",
@@ -35,7 +22,7 @@
     "angular:watch": "ng build --watch --configuration development",
     "angular:test": "ng test",
     "electron:build": "cd electron && tsc",
-    "electron:start": "electron ."
+    "electron:start": "npm run electron:build && electron ./dist/main.js"
   },
   "dependencies": {
     "@angular/animations": "^17.0.0",
@@ -66,5 +53,17 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ts-node": "^10.9.1",
     "typescript": "~5.2.2"
-  }
+  },
+  "keywords": [
+    "angular",
+    "angular 17",
+    "electron",
+    "electron 28",
+    "nodejs",
+    "typescript",
+    "sass",
+    "windows",
+    "mac",
+    "linux"
+  ]
 }
