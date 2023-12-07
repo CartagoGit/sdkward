@@ -15,11 +15,12 @@
       "prefix": "view",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/view",
             "index": "view/index.html",
-            "browser": "view/main.ts",
+            "main": "view/main.ts",
+            "poll": 200,
             "polyfills": [
               "zone.js"
             ],

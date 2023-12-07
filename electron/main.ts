@@ -43,7 +43,7 @@ const createWindow = () => {
     win.loadURL(`http://localhost:${port}`);
   } else {
     // Path when running electron executable
-    let pathIndex = './index.html';
+    let pathIndex = './view/index.html';
 
     if (fs.existsSync(path.join(__dirname, '../dist/view/index.html'))) {
       // Path when running electron in local folder
@@ -71,24 +71,21 @@ try {
   // Some APIs can only be used after this event occurs.
   // Added 400 ms to fix the black background issue while using transparent window. More detais at https://github.com/electron/electron/issues/15947
   // app.on('ready', () => setTimeout(createWindow, 400));
+  app.on('ready', createWindow);
 
   // Quit when all windows are closed.
   app.on('window-all-closed', () => {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
-      app.quit();
-    }
+    if (process.platform !== 'darwin') app.quit();
   });
 
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (win === null) {
-      createWindow();
-    }
+    if (win === null) createWindow();
   });
-} catch (e) {
+} catch (error) {
   // Catch Error
-  // throw e;
+  throw { message: 'Error opening Electron', error };
 }
