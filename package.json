@@ -1,12 +1,15 @@
 {
   "name": "sdkward",
   "version": "0.0.0",
+  "description": "Application to switch between SDKs according to the selected profile. The wardrobe for your SDKs",
+  "main": "electron/init.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "ng:start": "ng serve",
+    "ng:build": "ng build",
+    "ng:watch": "ng build --watch --configuration development",
+    "ng:test": "ng test",
+    "electron:start": "electron ."
   },
   "private": true,
   "dependencies": {
@@ -27,6 +30,7 @@
     "@angular/cli": "^17.0.6",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "electron": "^28.0.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
