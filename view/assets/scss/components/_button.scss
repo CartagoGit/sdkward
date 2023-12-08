@@ -1,7 +1,7 @@
 button,
 .button {
   all: unset;
-  padding: 5px 10px;
+  padding: 7px 10px;
   border-radius: var(--border-radius-primary);
   box-shadow: var(--box-shadow-primary);
   cursor: pointer;
@@ -24,6 +24,15 @@ button,
 
     &:hover {
       background-color: var(--#{$name}-dark);
+    }
+  }
+  .button-outline-#{$name} {
+    background-color: var(--grey-lightest);
+    color: var(--#{$name});
+    border: 1px solid var(--#{$name});
+
+    &:hover {
+      background-color: var(--#{$name}-light);
     }
   }
 }

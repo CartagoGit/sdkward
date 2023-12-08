@@ -18,8 +18,13 @@
     <h1>Components</h1>
     <div class="container">
       <div class="component">
-        <div class="component__header">Button</div>
-        <button [class]="'button-' + color.name">{{ color.name }}</button>
+        <div class="component__header">Buttons</div>
+        <div class="component__body">
+
+          <button [class]="'button-' + color.name">{{ color.name }}</button>
+          <button [class]="'button-outline-' + color.name">{{ color.name }}</button>
+        </div>
+
       </div>
     </div>
   </section>
