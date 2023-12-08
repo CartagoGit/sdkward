@@ -14,6 +14,7 @@ console.info('Electron:: main.ts -> start');
 // Get Values from args
 const args = getArgs();
 let win: BrowserWindow | null = null;
+app.commandLine.appendSwitch('ignore-gpu-blacklist');
 
 //? Create a new window
 const createWindow = () => {
@@ -45,7 +46,6 @@ const createWindow = () => {
       isEnabled: true,
       devToolsMode: 'undocked',
       showDevTools: true,
-
     });
     electronReloader(module);
     win.webContents.openDevTools();

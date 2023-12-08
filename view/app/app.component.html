@@ -8,12 +8,31 @@
 </aside>
 <main>
   @for(color of colorsVarCss; let i = $index; track i ) {
-  <h1>{{ color.name }}</h1>
-  @for(scale of color.values; let j = $index; track j ) {
+  <article>
+    <section class="colors">
+      <h1>{{ color.name }}</h1>
+      <div class="container">
+        @for(scale of color.values; let j = $index; track j ) {
 
-  <div [ngStyle]="{ 'background-color': 'var(--' + scale + ')' }">
-    {{ scale }}
-  </div>
-  } }
+        <div
+          class="color"
+          [ngStyle]="{ 'background-color': 'var(--' + scale + ')' }"
+        >
+          {{ scale }}
+        </div>
+        }
+      </div>
+    </section>
+    <section class="components">
+      <h1>Components</h1>
+      <div class="container">
+        <div class="component">
+          <div class="component__header">Button</div>
+          <button [class]="'button-' + color.name">{{ color.name }}</button>
+        </div>
+      </div>
+    </section>
+  </article>
+  }
   <router-outlet></router-outlet>
 </main>

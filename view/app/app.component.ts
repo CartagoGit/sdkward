@@ -23,6 +23,7 @@ export class AppComponent {
     'error',
     'warning',
     'info',
+    "grey",
   ];
   public colorsVarCss: { name: string; values: string[] }[] = [];
 
