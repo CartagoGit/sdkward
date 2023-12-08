@@ -31,39 +31,4 @@ main {
   scrollbar-gutter: stable both-edges;
 }
 
-article {
-  display: flex;
-  justify-content: space-around;
-  section {
-    display: flex;
-    flex-direction: column;
-    h1 {
-      text-align: center;
-    }
-    .container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      .component {
-        &__header {
-          display: flex;
-          justify-content: center;
-          font-size: 14px;
-          text-align: center;
-        }
-      }
-    }
-  }
-  .color {
-    border-radius: var(--border-radius-primary);
-    box-shadow: var(--box-shadow-primary);
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-}
+

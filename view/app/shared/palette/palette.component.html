@@ -1,0 +1,27 @@
+@for(color of colorsVarCss; let i = $index; track i ) {
+<article>
+  <section class="palette">
+    <h1>{{ color.name }}</h1>
+    <div class="container">
+      @for(scale of color.values; let j = $index; track j ) {
+
+      <div
+        class="color"
+        [ngStyle]="{ 'background-color': 'var(--' + scale + ')' }"
+      >
+        {{ scale }}
+      </div>
+      }
+    </div>
+  </section>
+  <section class="components">
+    <h1>Components</h1>
+    <div class="container">
+      <div class="component">
+        <div class="component__header">Button</div>
+        <button [class]="'button-' + color.name">{{ color.name }}</button>
+      </div>
+    </div>
+  </section>
+</article>
+}
