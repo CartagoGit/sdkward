@@ -6,6 +6,6 @@
     "types": []
   },
   "files": ["main.ts"],
-  "include": ["app/**/*.*"],
+  "include": ["**/*.*"],
   "exclude": ["../**/*.*", "app/**/*.spec.ts", "app/**/*.test.ts"]
 }

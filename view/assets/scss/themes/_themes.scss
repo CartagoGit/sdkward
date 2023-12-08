@@ -1,0 +1,52 @@
+@import "./colors.scss";
+@import "../utilities/mixins";
+
+//? Base colors for app
+
+//* Light theme
+// :root{
+//   --primary: var(--sky-500);
+//   --primary-light: var(--sky-100);
+//   --primary-dark: var(--sky-900);
+
+//   --secondary: var(--teal-500);
+//   --secondary-light: var(--teal-100);
+//   --secondary-dark: var(--teal-900);
+
+//   --tertiary: var(--indigo-500);
+//   --tertiary-light: var(--indigo-100);
+//   --tertiary-dark: var(--indigo-900);
+
+//   --quaternary: #10b981;
+
+//   --success: #10b981;
+//   --error: #f43f5e;
+//   --warning: #f59e0b;
+//   --info: #3b82f6;
+// }
+
+$scale-colors: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+$scale-suffix: (
+  50: "lightest",
+  200: "light",
+  500: "base",
+  800: "dark",
+  950: "darkest",
+);
+$colors: (
+  primary: "sky",
+  secondary: "rose",
+  tertiary: "orange",
+);
+
+$dark-colors: (
+  primary: "sky",
+  secondary: "rose",
+  tertiary: "orange",
+);
+
+
+:root {
+  // Calculate scale colors
+  @include createColorScales($colors);
+}

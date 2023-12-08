@@ -13,11 +13,12 @@ import { ipcRenderer } from 'electron';
 export class AppComponent {
   // public ipcRenderer = ipcRenderer;
   public ipcRenderer!: typeof ipcRenderer;
-  public items: number[] = [];
+  public colors: number[] = [];
+
   public isExpanded: boolean = true;
   constructor() {
     for (let i = 0; i < 10; i++) {
-      this.items.push(i);
+      this.colors.push(i);
     }
   }
 

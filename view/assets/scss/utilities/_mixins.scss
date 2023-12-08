@@ -1,0 +1,18 @@
+// Mixin to generate color scales
+@mixin createColorScales($colors) {
+  @each $name, $color in $colors {
+    @each $scale in $scale-colors {
+      @if map-has-key($scale-suffix, $scale) {
+        $suffix: map-get($scale-suffix, $scale);
+        @if ($suffix == "base") {
+          --#{$name}: var(--#{$color}-#{$scale});
+          --#{$name}-accent: lighten(var(--#{$color}-#{$scale}));
+        } @else {
+          --#{$name}-#{$suffix}: var(--#{$color}-#{$scale});
+        }
+      } @else {
+        --#{$name}-#{$scale}: var(--#{$color}-#{$scale});
+      }
+    }
+  }
+}
