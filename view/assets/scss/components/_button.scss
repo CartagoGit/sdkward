@@ -32,6 +32,8 @@ button,
     border: 1px solid var(--#{$name});
 
     &:hover {
+      color: var(--#{$name}-dark);
+      border: 1px solid var(--#{$name}-dark);
       background-color: var(--#{$name}-light);
     }
   }
