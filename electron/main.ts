@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 // For Electron
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, ipcMain, screen } from 'electron';
 import electronDebug from 'electron-debug';
 import electronReloader from 'electron-reloader';
 // Personal imports
@@ -34,6 +34,7 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
       devTools: isProd ? false : true,
+      contextIsolation: false,
     },
   });
   win.maximize();
@@ -44,6 +45,7 @@ const createWindow = () => {
       isEnabled: true,
       devToolsMode: 'undocked',
       showDevTools: true,
+
     });
     electronReloader(module);
     win.webContents.openDevTools();
@@ -70,6 +72,13 @@ const createWindow = () => {
     require('electron').shell.openExternal(url);
     console.info('Electron: Url opened in browser:', url);
     return { action: 'deny' };
+  });
+
+  // Escucha el evento para reiniciar el proceso de renderizado
+  ipcMain.on('restart-renderer', (_channel, data) => {
+    console.info('Electron:: main.ts -> restart-renderer', data);
+    // Envía un mensaje al proceso de renderizado para reiniciar
+    win!.webContents.send('restart-renderer');
   });
 
   // Emitted when the window is closed.
