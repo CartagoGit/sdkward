@@ -11,14 +11,21 @@ import { ipcRenderer } from 'electron';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  public ipcRenderer = ipcRenderer;
-  constructor() {}
+  // public ipcRenderer = ipcRenderer;
+  public ipcRenderer!: typeof ipcRenderer;
+  public items: number[] = [];
+  public isExpanded: boolean = true;
+  constructor() {
+    for (let i = 0; i < 10; i++) {
+      this.items.push(i);
+    }
+  }
 
   ngOnInit(): void {
     // TODO hacerlo invocado desde el main y que cualquier evento lo pueda escuchar
     // TODO y sea tipado
-    // this.ipcRenderer = (window as any).require('electron')
-    //   .ipcRenderer as typeof ipcRenderer;
+    this.ipcRenderer = (window as any).require('electron')
+      .ipcRenderer as typeof ipcRenderer;
     // Escucha el evento desde el proceso principal para reiniciar
     this.ipcRenderer.on('restart-renderer', () => {
       // Realiza la lógica de reinicio o actualización en Angular
@@ -34,5 +41,10 @@ export class AppComponent {
   public sendToIpc(): void {
     console.log('Sending message to ipc...', this.ipcRenderer);
     this.ipcRenderer.send('restart-renderer', 'Hello from Angular!');
+  }
+
+  public toogleAside(): void {
+    console.log('toogleAside', this.isExpanded);
+    this.isExpanded = !this.isExpanded;
   }
 }

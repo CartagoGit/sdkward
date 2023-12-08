@@ -1,2 +1,11 @@
-<button (click)="sendToIpc()">Prueba Ipc</button>
-<router-outlet></router-outlet>
+<aside
+  [ngClass]="{
+    expanded: isExpanded
+  }"
+>
+  <button (click)="sendToIpc()">Prueba Ipc</button>
+  <button (click)="toogleAside()">Contraer</button>
+</aside>
+<main>
+  <router-outlet></router-outlet>
+</main>
