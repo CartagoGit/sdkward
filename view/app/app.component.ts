@@ -12,13 +12,30 @@ import { ipcRenderer } from 'electron';
 })
 export class AppComponent {
   // public ipcRenderer = ipcRenderer;
-  public ipcRenderer!: typeof ipcRenderer;
-  public colors: number[] = [];
 
+  private _scaleSuffix = ['lightest', 'light', 'base', 'dark', 'darkest'];
+  private _colors = [
+    'primary',
+    'secondary',
+    'tertiary',
+    'quaternary',
+    'success',
+    'error',
+    'warning',
+    'info',
+  ];
+  public colorsVarCss: { name: string; values: string[] }[] = [];
+
+  public ipcRenderer!: typeof ipcRenderer;
   public isExpanded: boolean = true;
   constructor() {
-    for (let i = 0; i < 10; i++) {
-      this.colors.push(i);
+    for (let color of this._colors) {
+      let scales: string[] = [];
+      for (let scale of this._scaleSuffix) {
+        if (scale === 'base') scales.push(`${color}`);
+        else scales.push(`${color}-${scale}`);
+      }
+      this.colorsVarCss.push({ name: color, values: scales });
     }
   }
 

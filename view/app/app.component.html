@@ -7,10 +7,13 @@
   <button (click)="toogleAside()">Contraer</button>
 </aside>
 <main>
-  @for(color of colors; let i = $index; track i ) {
-  <div [ngStyle]="{ 'background-color': color }">
-    {{ color }}
+  @for(color of colorsVarCss; let i = $index; track i ) {
+  <h1>{{ color.name }}</h1>
+  @for(scale of color.values; let j = $index; track j ) {
+
+  <div [ngStyle]="{ 'background-color': 'var(--' + scale + ')' }">
+    {{ scale }}
   </div>
-  }
+  } }
   <router-outlet></router-outlet>
 </main>
