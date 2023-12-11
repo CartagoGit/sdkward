@@ -12,7 +12,7 @@
     transition: all 0.3s;
     cursor: text;
     align-items: center;
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   &:focus-within label,
@@ -23,6 +23,5 @@
     left: 0;
     font-size: 12px;
     font-weight: 500;
-    color: attr(data-color);
   }
 }
