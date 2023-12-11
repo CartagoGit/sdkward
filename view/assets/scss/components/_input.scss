@@ -1,3 +1,23 @@
-input, .input{
+input,
+.input {
   all: unset;
+  padding: 7px 10px;
+  border-radius: var(--border-radius-primary);
+  box-shadow: var(--box-shadow-primary);
+  cursor: auto;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--grey-lightest);
+  color: var(--grey-darkest);
+  border: 1px solid var(--grey-light);
+  width: 100px;
+  &:active,
+  &:focus {
+    border: 1px solid var(--grey);
+    background-color: var(--grey-light);
+  }
+  &:hover {
+    border: 1px solid var(--grey);
+    box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
+    background-color: var(--grey-light);
+  }
 }

@@ -1,7 +1,7 @@
 article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 15px;
   section {
     display: flex;
     flex-direction: column;
@@ -13,7 +13,8 @@ article {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      justify-content: space-evenly;
       .component {
         &__header {
           font-family: 'Roboto', sans-serif;
@@ -28,6 +29,8 @@ article {
         &__body{
           display: flex;
           justify-content: center;
+          align-items: center;
+          flex-direction: column;
           flex-wrap: wrap;
           gap: 10px;
         }
