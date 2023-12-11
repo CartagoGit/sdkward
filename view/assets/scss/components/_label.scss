@@ -12,14 +12,17 @@
     transition: all 0.3s;
     cursor: text;
     align-items: center;
+    opacity: 0.4;
   }
 
   &:focus-within label,
   // input:valid + label
-  &input:not(:placeholder-shown) ~ label {
+  input:not(:placeholder-shown) ~ label {
+    opacity: 1;
     top: -24px;
     left: 0;
     font-size: 12px;
     font-weight: 500;
+    color: attr(data-color);
   }
 }

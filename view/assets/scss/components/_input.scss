@@ -38,7 +38,7 @@ input,
     }
     &:hover {
       border: 1px solid var(--#{$name}-dark);
-      color: var(--#{$name}-dark);
+      color: var(--#{$name});
       background-color: var(--#{$name}-light);
     }
   }

@@ -36,10 +36,13 @@
               [id]="'input-' + color.name"
               type="text"
               [class]="'input-' + color.name"
+              placeholder=""
             />
-            <label [for]="'input-' + color.name">{{
-              color.name | titlecase
-            }}</label>
+            <label
+              [for]="'input-' + color.name"
+              [class]="'text-' + color.name"
+              >{{ color.name | titlecase }}</label
+            >
           </span>
         </div>
       </div>

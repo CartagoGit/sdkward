@@ -1,0 +1,21 @@
+// Create text colors
+@each $name, $color-value in $colors {
+  @each $scale in $scale-colors {
+    @if map-has-key($scale-suffix, $scale) {
+      $suffix: map-get($scale-suffix, $scale);
+      @if ($suffix == "base") {
+        .text-#{$name} {
+          color: var(--#{$color-value}-#{$scale}) !important;
+        }
+      } @else {
+        .text-#{$name}-#{$suffix} {
+          color: var(--#{$color-value}-#{$scale}) !important;
+        }
+      }
+    } @else {
+      .text-#{$name}-#{$scale} {
+        color: var(--#{$color-value}-#{$scale}) !important;
+      }
+    }
+  }
+}
