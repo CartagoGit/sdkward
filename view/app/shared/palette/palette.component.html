@@ -1,7 +1,7 @@
 @for(color of colorsVarCss; let i = $index; track i ) {
 <article>
   <section class="palette">
-    <h1>{{ color.name }}</h1>
+    <h1>{{ color.name | titlecase }}</h1>
     <div class="container">
       @for(scale of color.values; let j = $index; track j ) {
 
@@ -20,18 +20,26 @@
       <div class="component">
         <div class="component__header">Buttons</div>
         <div class="component__body">
-
-          <button [class]="'button-' + color.name">{{ color.name }}</button>
-          <button [class]="'button-outline-' + color.name">{{ color.name }}</button>
+          <button [class]="'button-' + color.name">
+            {{ color.name | titlecase }}
+          </button>
+          <button [class]="'button-outline-' + color.name">
+            {{ color.name | titlecase }}
+          </button>
         </div>
-
       </div>
       <div class="component">
         <div class="component__header">Input</div>
         <div class="component__body">
-          <input type="text" />
+          <label [for]="'input-' + color.name">{{
+            color.name | titlecase
+          }}</label>
+          <input
+            [id]="'input-' + color.name"
+            type="text"
+            [class]="'input-' + color.name"
+          />
         </div>
-
       </div>
     </div>
   </section>

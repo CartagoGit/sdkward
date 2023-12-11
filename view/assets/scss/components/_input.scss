@@ -20,4 +20,26 @@ input,
     box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
     background-color: var(--grey-light);
   }
+  .label{
+    color:red;
+  }
+}
+
+// Create button colors
+@each $name, $color-value in $colors {
+  .input-#{$name} {
+    background-color: var(--#{$name}-lightest);
+    color: var(--#{$name}-darkest);
+    border: 1px solid var(--#{$name});
+
+    &:active,
+    &:focus {
+      border: 1px solid var(--#{$name});
+      background-color: var(--#{$name}-light);
+    }
+    &:hover {
+      border: 1px solid var(--#{$name});
+      background-color: var(--#{$name}-light);
+    }
+  }
 }
