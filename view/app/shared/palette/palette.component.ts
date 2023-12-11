@@ -19,7 +19,7 @@ export class PaletteComponent {
     'error',
     'warning',
     'info',
-    'gray',
+    'grey',
   ];
   public colorsVarCss: { name: string; values: string[] }[] = [];
 

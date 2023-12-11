@@ -5,13 +5,13 @@
       @if map-has-key($scale-suffix, $scale) {
         $suffix: map-get($scale-suffix, $scale);
         @if ($suffix == "base") {
-          --#{($name)}: var(--#{$color}-#{$scale});
+          --#{$name}: var(--#{$color}-#{$scale});
           // --#{$name}-accent: lighten(var(--#{$color}-#{$scale}));
         } @else {
-          --#{($name)}-#{$suffix}: var(--#{$color}-#{$scale});
+          --#{$name}-#{$suffix}: var(--#{$color}-#{$scale});
         }
       } @else if($isGettingAll) {
-        --#{($name)}-#{$scale}: var(--#{$color}-#{$scale});
+        --#{$name}-#{$scale}: var(--#{$color}-#{$scale});
       }
     }
   }

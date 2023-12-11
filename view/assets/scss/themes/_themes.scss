@@ -13,15 +13,15 @@ $scale-suffix: (
 
 //* Light theme
 $colors: (
-  primary: "sky",
-  secondary: "violet",
-  tertiary: "teal",
-  quaternary: "amber",
-  success: "green",
-  error: "red",
-  warning: "yellow",
-  info: "cyan",
-  silver: "gray",
+  "primary": "sky",
+  "secondary": "violet",
+  "tertiary": "teal",
+  "quaternary": "amber",
+  "success": "green",
+  "error": "red",
+  "warning": "yellow",
+  "info": "cyan",
+  "grey": "slate",
 );
 
 :root {
