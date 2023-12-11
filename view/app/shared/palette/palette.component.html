@@ -26,6 +26,14 @@
         </div>
 
       </div>
+      <div class="component">
+        <div class="component__header">Input</div>
+        <div class="component__body">
+          <button [class]="'button-' + color.name">{{ color.name }}</button>
+          <button [class]="'button-outline-' + color.name">{{ color.name }}</button>
+        </div>
+
+      </div>
     </div>
   </section>
 </article>

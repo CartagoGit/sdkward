@@ -16,6 +16,8 @@ article {
       gap: 10px;
       .component {
         &__header {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 600;
           align-self: flex-start;
           display: flex;
           justify-content: center;

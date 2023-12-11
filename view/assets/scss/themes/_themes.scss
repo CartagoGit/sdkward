@@ -4,11 +4,11 @@
 //? Base colors for app
 $scale-colors: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
 $scale-suffix: (
-  100: "lightest",
-  300: "light",
+  50: "lightest",
+  100: "light",
   600: "base",
-  700: "dark",
-  900: "darkest",
+  800: "dark",
+  950: "darkest",
 );
 
 //* Light theme
