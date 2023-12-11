@@ -1,35 +1,36 @@
 input,
 .input {
+  display: grid;
+  place-items: center;
+  font-size: 14px;
   all: unset;
   padding: 7px 10px;
   border-radius: var(--border-radius-primary);
   box-shadow: var(--box-shadow-primary);
   cursor: auto;
   transition: all 0.2s ease-in-out;
-  background-color: var(--grey-lightest);
-  color: var(--grey-darkest);
-  border: 1px solid var(--grey-light);
+  background-color: var(--gray-lightest);
+  color: var(--gray-darkest);
+  border: 1px solid var(--gray-light);
   width: 100px;
+
   &:active,
   &:focus {
-    border: 1px solid var(--grey);
-    background-color: var(--grey-light);
+    border: 1px solid var(--gray);
+    background-color: var(--gray-light);
   }
   &:hover {
-    border: 1px solid var(--grey);
+    border: 1px solid var(--gray);
     box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
-    background-color: var(--grey-light);
-  }
-  .label{
-    color:red;
+    background-color: var(--gray-light);
   }
 }
 
-// Create button colors
+// Create input colors
 @each $name, $color-value in $colors {
   .input-#{$name} {
     background-color: var(--#{$name}-lightest);
-    color: var(--#{$name}-darkest);
+    color: var(--#{$name});
     border: 1px solid var(--#{$name});
 
     &:active,
@@ -38,7 +39,8 @@ input,
       background-color: var(--#{$name}-light);
     }
     &:hover {
-      border: 1px solid var(--#{$name});
+      border: 1px solid var(--#{$name}-dark);
+      color: var(--#{$name}-dark);
       background-color: var(--#{$name}-light);
     }
   }

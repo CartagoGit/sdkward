@@ -31,14 +31,16 @@
       <div class="component">
         <div class="component__header">Input</div>
         <div class="component__body">
-          <label [for]="'input-' + color.name">{{
-            color.name | titlecase
-          }}</label>
-          <input
-            [id]="'input-' + color.name"
-            type="text"
-            [class]="'input-' + color.name"
-          />
+          <span class="label-wrapper">
+            <input
+              [id]="'input-' + color.name"
+              type="text"
+              [class]="'input-' + color.name"
+            />
+            <label [for]="'input-' + color.name">{{
+              color.name | titlecase
+            }}</label>
+          </span>
         </div>
       </div>
     </div>

@@ -1,0 +1,24 @@
+.label-wrapper {
+  position: relative;
+  display: flex;
+  label {
+    all: unset;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 10px;
+    color: var(--gray-darkest);
+    transition: all 0.3s;
+    cursor: text;
+    align-items: center;
+  }
+
+  &:focus-within label,
+  input:not(:blank) + label {
+    top: -24px;
+    left: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

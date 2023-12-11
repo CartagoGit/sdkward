@@ -6,17 +6,17 @@ button,
   box-shadow: var(--box-shadow-primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  background-color: var(--grey);
-  color: var(--grey-lightest);
-  border: 1px solid var(--grey);
+  background-color: var(--gray);
+  color: var(--gray-lightest);
+  border: 1px solid var(--gray);
   &:active,
   &:focus {
-    border: 1px solid var(--grey-darkest);
+    border: 1px solid var(--gray-darkest);
   }
   &:hover {
-    border: 1px solid var(--grey);
+    border: 1px solid var(--gray);
     box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
-    background-color: var(--grey-dark);
+    background-color: var(--gray-dark);
   }
 }
 
@@ -37,7 +37,7 @@ button,
     }
   }
   .button-outline-#{$name} {
-    background-color: var(--grey-lightest);
+    background-color: var(--#{$name}-lightest);
     color: var(--#{$name});
     border: 1px solid var(--#{$name});
 
