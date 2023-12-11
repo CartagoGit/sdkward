@@ -6,17 +6,17 @@ button,
   box-shadow: var(--box-shadow-primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  background-color: var(--gray);
-  color: var(--gray-lightest);
-  border: 1px solid var(--gray);
+  background-color: var(--silver);
+  color: var(--silver-lightest);
+  border: 1px solid var(--silver);
   &:active,
   &:focus {
-    border: 1px solid var(--gray-darkest);
+    border: 1px solid var(--silver-darkest);
   }
   &:hover {
-    border: 1px solid var(--gray);
+    border: 1px solid var(--silver);
     box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
-    background-color: var(--gray-dark);
+    background-color: var(--silver-dark);
   }
 }
 

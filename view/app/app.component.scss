@@ -8,15 +8,15 @@
   overflow: hidden;
   background: linear-gradient(
     to right,
-    var(--gray-light),
+    var(--silver-light),
     var(--primary-lightest)
   );
 }
 
 aside {
   padding: 10px;
-  background-color: var(--gray-dark);
-  color: var(--gray-light);
+  background-color: var(--silver-dark);
+  color: var(--silver-light);
   box-shadow: var(--box-shadow-primary);
   transition: width 0.3s ease-in-out;
   width: 50px;

@@ -1,28 +1,26 @@
 input,
 .input {
-  display: grid;
-  place-items: center;
-  font-size: 14px;
   all: unset;
+  display: grid;
   padding: 7px 10px;
   border-radius: var(--border-radius-primary);
   box-shadow: var(--box-shadow-primary);
   cursor: auto;
   transition: all 0.2s ease-in-out;
-  background-color: var(--gray-lightest);
-  color: var(--gray-darkest);
-  border: 1px solid var(--gray-light);
+  background-color: var(--silver-lightest);
+  color: var(--silver-darkest);
+  border: 1px solid var(--silver-light);
   width: 100px;
 
   &:active,
   &:focus {
-    border: 1px solid var(--gray);
-    background-color: var(--gray-light);
+    border: 1px solid var(--silver);
+    background-color: var(--silver-light);
   }
   &:hover {
-    border: 1px solid var(--gray);
+    border: 1px solid var(--silver);
     box-shadow: var(--box-shadow-primary), var(--box-shadow-secondary);
-    background-color: var(--gray-light);
+    background-color: var(--silver-light);
   }
 }
 
