@@ -42,4 +42,20 @@ input,
       background-color: var(--#{$name}-light);
     }
   }
+  .input-reverse-#{$name} {
+    background-color: var(--#{$name}-lightest);
+    color: var(--#{$name});
+    border: 1px solid var(--#{$name});
+
+    &:active,
+    &:focus {
+      border: 1px solid var(--#{$name});
+      background-color: var(--#{$name}-light);
+    }
+    &:hover {
+      border: 1px solid var(--#{$name}-dark);
+      color: var(--#{$name});
+      background-color: var(--#{$name}-light);
+    }
+  }
 }
