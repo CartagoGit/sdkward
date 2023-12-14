@@ -13,11 +13,13 @@
     cursor: text;
     align-items: center;
     opacity: 0.5;
+    filter: brightness(1.2);
   }
 
   &:focus-within label,
   // input:valid + label
   input:not(:placeholder-shown) ~ label {
+    filter: brightness(0.5);
     opacity: 1;
     top: -24px;
     left: 0;
